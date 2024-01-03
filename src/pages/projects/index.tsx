@@ -59,40 +59,42 @@ export default function ProjectsPage() {
 
   return (
     <>
-      <div className="mt-8 mb-4 flex items-center font-bold">
-        <Clock size={20} className="mr-2" /> Recently viewed
-      </div>
-      <div className="grid gap-[24px] sm:grid-cols-1 md:shrink-0 md:grid-cols-2 lg:grid-cols-3">
-        {recentProjects.map((task, index) => (
-          <TaskCard
-            key={index}
-            title={task.title}
-            dueDate={'March 30,2023'}
-            completedTaskCount={task.completedTaskCount}
-            totalTaskCount={task.totalTaskCount}
-            bgColor="bg-gray-300"
-            members={task.members}
-          />
-        ))}
-      </div>
-      <div className="flex justify-between">
-        <div className="mt-8 mb-4 font-bold">My project</div>
-        <button className="flex items-center text-sm font-semibold">
-          <SlidersHorizontal size={19} className="mr-2" /> Sell all
-        </button>
-      </div>
-      <div className="grid gap-[24px] sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        {myProjects.map((task, index) => (
-          <TaskCard
-            key={index}
-            title={task.title}
-            dueDate={task.dueDate}
-            completedTaskCount={task.completedTaskCount}
-            totalTaskCount={task.totalTaskCount}
-            bgColor={task.bgColor}
-            members={task.members}
-          />
-        ))}
+      <div className=" left-345 h-full w-full gap-48 lg:top-0 lg:w-[1386px]">
+        <div className="mt-8 mb-4 flex items-center font-['Roboto'] font-bold">
+          <Clock size={20} className="mr-2" /> Recently viewed
+        </div>
+        <div className="grid gap-[24px] sm:grid-cols-1 md:shrink-0 md:grid-cols-2 lg:grid-cols-3">
+          {recentProjects.map((task, index) => (
+            <TaskCard
+              key={index}
+              title={task.title}
+              dueDate={'March 30,2023'}
+              completedTaskCount={task.completedTaskCount}
+              totalTaskCount={task.totalTaskCount}
+              bgColor="bg-gray-300"
+              members={task.members}
+            />
+          ))}
+        </div>
+        <div className="flex justify-between font-['Roboto']">
+          <div className="mt-8 mb-4 font-bold">My project</div>
+          <button className="mt-8 mb-4 flex items-center pr-9 text-sm font-semibold">
+            <SlidersHorizontal size={19} className="mr-2" /> Sell all
+          </button>
+        </div>
+        <div className="grid gap-[24px] sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          {myProjects.map((task, index) => (
+            <TaskCard
+              key={index}
+              title={task.title}
+              dueDate={task.dueDate}
+              completedTaskCount={task.completedTaskCount}
+              totalTaskCount={task.totalTaskCount}
+              bgColor={task.bgColor}
+              members={task.members}
+            />
+          ))}
+        </div>
       </div>
     </>
   );
